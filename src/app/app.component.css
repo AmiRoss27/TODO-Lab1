@@ -1,0 +1,25 @@
+
+#toDoWrapper{
+    width: 70vw;
+    height: auto;
+    background-color: white;
+    margin: 25px auto;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    
+   
+    
+}
+
+#toDoApp{
+    margin: 15px;
+    position: relative;
+    width: 100%;
+}
+
+
+

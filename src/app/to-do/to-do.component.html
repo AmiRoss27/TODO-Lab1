@@ -1,0 +1,14 @@
+<h1>TODO List</h1>
+<p>A place to store your todos</p>
+<input class = "filterInput"type="text" placeholder="Filter your to-dos">
+<ol class="toDoList">
+    <li *ngFor = "let todo of todos" class="toDoItem">
+        <div>
+            <button class = "btnCompleteClass" *ngIf = "todo.completed === false" (click)="completeTask(todo)">Complete</button>
+            <p id = "toDoTask"[ngClass]="{'strikeThrough' : todo.completed}">{{ todo.task }}</p>
+            <p class = "deleteTaskButton"(click) = "deleteTask(todo)">X</p>
+        </div>
+    </li>
+</ol>
+<input class = "addInput"type="text" placeholder="Add your to-do">
+<button class ="btnAdd">Add</button>
