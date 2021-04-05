@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ToDos} from 'src/app/to-do/to-do'
+import {Task} from 'src/app/to-do/task';
 
 @Component({
   selector: 'app-to-do',
@@ -9,7 +9,11 @@ import {ToDos} from 'src/app/to-do/to-do'
 
 export class ToDoComponent implements OnInit {
 
-  todos: ToDos[]; 
+  todos: Task[]; 
+
+  searchText: string | null = null;
+
+  newTask: string;
 
   constructor() { 
     this.todos = [
@@ -42,18 +46,18 @@ export class ToDoComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('App Init');
-    //Any extra init functionality goes here
   }
 
-  //Complete Task
-  completeTask(todo: any){
-    todo.completed = true;
-  }
-
-  //Delete Task
-  deleteTask(todo: any){
+  removeTask(todo: Task){
     let index = this.todos.findIndex(task => task === todo)
     this.todos.splice(index, 1);
   }
 
+  addTask(){
+   this.todos.push({
+     task: this.newTask, completed:false
+   })
+  }
 }
+
+  

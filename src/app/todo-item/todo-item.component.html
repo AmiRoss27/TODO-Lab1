@@ -1,0 +1,7 @@
+<li  class="toDoItem" >
+    <div>
+        <button class = "btnCompleteClass" *ngIf = "todo.completed === false" (click)="completeTask(todo)">Complete</button>
+        <p id = "toDoTask"[ngClass]="{'strikeThrough' : todo.completed}">{{ todo.task }}</p>
+        <p class = "deleteTaskButton" (click) = "removeTask(todo)">X</p>
+    </div>
+</li>
